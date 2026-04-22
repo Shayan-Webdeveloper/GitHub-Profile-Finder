@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Github User Finder</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               font-family: Arial, Helvetica, sans-serif;
+               color: white;
+          }
+
+          html,
+          body {
+               width: 100%;
+               height: 100vh;
+               background-color: #0F172A;
+          }
+
+          .container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: column;
+               height: 100vh;
+               width: 100%;
+          }
+
+          .container>h1 {
+               font-family: Arial, Helvetica, sans-serif;
+               font-weight: 700;
+               color: white;
+               margin-bottom: 20px;
+          }
+
+          .search {
+               display: flex;
+               gap: 10px;
+          }
+
+          .search input {
+               padding: 10px;
+               outline: none;
+               border: none;
+               border-radius: 8px;
+               width: 230px;
+               color: black;
+          }
+
+          .search button {
+               padding: 10px 15px;
+               background-color: #2563EB;
+               color: white;
+               border: none;
+               border-radius: 8px;
+               cursor: pointer;
+          }
+
+          .search button:hover {
+               background-color: #1d4ed8;
+          }
+
+          .profile-card {
+               margin-top: 20px;
+               width: 340px;
+               background-color: #1E293B;
+               padding: 20px;
+               border-radius: 12px;
+               color: white;
+               text-align: center;
+          }
+
+          img {
+               width: 110px;
+               height: 110px;
+               border-radius: 50%;
+               border: 3px solid #2563eb;;
+               margin-bottom: 15px;
+          }
+          h2 {
+               margin: 5px 0;
+          }
+          .profile-card p {
+               margin: 8px 0;
+          }
+          #status {
+               margin-top: 15px;
+               color: #cbd5e1;
+          }
+          .profile-card a {
+               background-color: #22c55e;
+               display: inline-block;
+               margin-top: 15px;
+               border: none;
+               outline: none;
+               padding: 10px 15px;
+               border-radius: 8px;
+               font-size: 16px;
+               text-decoration: none;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <h1>GitHub User Finder</h1>
+          <div class="search">
+               <input type="text" placeholder="Enter GitHub username..." id="username">
+               <button id="search">Search</button>
+          </div>
+          <p id="status"></p>
+          <div class="profile-card" id="profile-card">
+               <img src=""
+                    alt="User Image" id="img">
+               <h2 id="name"></h2>
+               <p id="bio"></p>
+               <p><strong>Followers:</strong><span id="followers"> </span></p>
+               <p><strong>Following:</strong><span id="following"> </span></p>
+               <p><strong>Public Repos:</strong> <span id="repos"></span></p>
+               <a href="#" target="_blank" id="profile-link">View Profile</a>
+          </div>
+     </div>
+
+
+     <script src="./app.js"></script>
+</body>
+
+</html>
