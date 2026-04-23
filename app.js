@@ -9,6 +9,8 @@ let following = document.querySelector("#following")
 let repo = document.querySelector("#repos")
 let profile = document.querySelector("#profile-card")
 let profileLink = document.querySelector("#profile-link")
+let container = document.querySelector("#container")
+
 profile.style.display = "none"
 
 async function findUser() {
@@ -22,7 +24,7 @@ async function findUser() {
           if (!response.ok) {
                throw new Error("User not found")
           }
-
+          
           let data = await response.json()
           img.src = data.avatar_url
           name.textContent = data.name || data.Login
@@ -33,14 +35,15 @@ async function findUser() {
           profileLink.href = data.html_url
           status.textContent = "User Found"
           profile.style.display = "block"
-          console.log(data);
-          
-          
+          if (container.style.height === "" && profile.style.display === "block") {
+               container.style.height = "140vh";
+          }
      } catch (error) {
           status.textContent = "User not found"
           profile.style.display = "none"     
      }
 }
+
 
 searchbtn.addEventListener("click", findUser)
 
